@@ -51,9 +51,16 @@
                 $('#wahlkreisEbeneMenu').jqxMenu({ source: laenderForWahlkreise, mode: 'vertical', theme: theme, width: '170' });
 				
 				
-                // Create a jqxMenu
+				
+				// Create the horizontal jqxMenu
+                $("#jqxMenuHorizontal").jqxMenu({ width: '900', height: '30'});
+				
+                // Create the vertical jqxMenu
                 $("#jqxMenu").jqxMenu({ width: '170', mode: 'vertical', theme: theme });
                 $("#jqxMenu").css('visibility', 'visible');
+				
+				// Create the jqxDockPanel
+				$("#jqxdockpanel").jqxDockPanel({ width: 900, height: 800});
 				
 				
 				var sitzverteilungSource =
@@ -108,47 +115,78 @@
 				
 				
             });
-        </script>
-        <div id='jqxWidget' style='width: 110px;'>
-            <div id='jqxMenu' style="visibility: hidden;">
-                <ul>
-                    <li><a href="menu.htm">fuzzy-robot</a></li>
-                    <li>Wahlergebnisse
-                        <ul>
-                            <li><a href="ergebnisse_bundesebene.html">Bundesebene</a></li>
-                            <li>Landesebene
-								<ul id='landesEbeneMenu'></ul>
-							</li>
-                            <li>Wahlkreisebene
-								<ul id='wahlkreisEbeneMenu'></ul>
-							</li>
-                        </ul>
-                    </li>
-                    <li>Gewählte Personen
-                        <ul>
-                            <li><a href="#">Alphabetisch</a></li>
-                            <li><a href="#">Nach Landeslisten</a></li>
-                            <li><a href="#">In Wahlkreisen</a></li>
-                            <li><a href="#">Nach Parteien</a></li>
-                        </ul>
-                    </li>
-                    <li>Dateneingabe
-                        <ul>
-                            <li><a href="#">csv Import</a></li>
-                            <li><a href="#">Eingabemaske</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-		
-		
-		<div id='main'>
-			Bundesebene
-			<div id='pieChartBundesebene' style="width: 680px; height: 400px; position: relative; left: 0px; top: 0px;"></div>
+        </script>		
+
+		<div id='jqxDockPanel' style="background: none; border: none;">
+		<div id='jqxMenuHorizontal' dock="top">
+				<ul>
+					<li>Sitzverteilung
+						<ul>
+							<li> <a href="#">Sitzverteilung</a></li>
+							<li> <a href="#">Differenz</a></li>
+						</ul>
+					</li>
+					
+					<li>Erststimme
+						<ul>
+							<li><a href="#">Ergebnis</a></li>
+							<li><a href="#">Differenz</a></li>
+						</ul>
+					</li>
+					<li>Zweitstimme
+						<ul>
+							<li><a href="#">Ergebnis</a></li>
+							<li><a href="#">Differenz</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Ergebnistabelle</a> </li>
+					<li>Thematische Karten
+						<ul>
+							<li><a href="#">Test</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Export</a> </li>
+				</ul>
+			</div>		
+			<div id='jqxWidget' style='width: 110px;' dock='left'>
+				<div id='jqxMenu' dock="left" style="visibility: hidden;">
+					<ul>
+						<li><a href="menu.htm">fuzzy-robot</a></li>
+						<li>Wahlergebnisse
+							<ul>
+								<li><a href="ergebnisse_bundesebene.html">Bundesebene</a></li>
+								<li>Landesebene
+									<ul id='landesEbeneMenu'></ul>
+								</li>
+								<li>Wahlkreisebene
+									<ul id='wahlkreisEbeneMenu'></ul>
+								</li>
+							</ul>
+						</li>
+						<li>Gewählte Personen
+							<ul>
+								<li><a href="#">Alphabetisch</a></li>
+								<li><a href="#">Nach Landeslisten</a></li>
+								<li><a href="#">In Wahlkreisen</a></li>
+								<li><a href="#">Nach Parteien</a></li>
+							</ul>
+						</li>
+						<li>Dateneingabe
+							<ul>
+								<li><a href="#">csv Import</a></li>
+								<li><a href="#">Eingabemaske</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
+			
+			<div id='main'>
+				Bundesebene
+				<div id='pieChartBundesebene' style="width: 680px; height: 400px; position: relative; left: 0px; top: 0px;"></div>
+			</div>
 		
 		
-    </div>
 </body>
 </html>
