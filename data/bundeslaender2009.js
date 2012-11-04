@@ -1,4 +1,4 @@
-﻿bundeslaender2009_data = [
+bundeslaender2009_data = [
                 {
                     "id": "1",
 					"parentid": "-1",
@@ -6,7 +6,7 @@
                 }, {
                     "id": "2",
 					"parentid": "-1",
-                    "text": "BaWü"
+                    "text": "BaW�"
                 }, {
                     "id": "3",
 					"parentid": "-1",
